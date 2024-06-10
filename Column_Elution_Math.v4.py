@@ -8,8 +8,8 @@ import numpy as np
 import math
 
 
-listofrfvalues = [.75,.7,.5,.3,.2] 
-diameterofcolumn = (32.88)
+listofrfvalues = [0.8,0.3] 
+diameterofcolumn = (53.2)
 lenghofcolumn = (250)
 
 ## Making a function to calculate column volume for isocratic mobile phases only 
@@ -22,16 +22,16 @@ def column_volume (diameterofcolumn, lenghofcolumn) : ## function for getting vo
     
     radiusofcolumn = (diameterofcolumn/2) ## Takign the diameter of the column and dividing by 2 to make the radius 
     
-    rcm = radiusofcolumn/10 ## unit converstion: mm to cm 
-    lcm = lenghofcolumn/10 ## unit converstion: mm to cm
+    rcm = radiusofcolumn ## unit converstion: mm to cm 
+    lcm = lenghofcolumn ## unit converstion: mm to cm
     
     r = int(rcm) ## tuning rcm into integer 
     l = int(lcm) ## turning lcm into integer 
     
-    cv = (pi*r**2*l*.7) ## calculating oclumn volume using pir^2l the .7 is an adjustment for amount of solvent lost due to silica absorption
+    cv = (l*pi*(diameterofcolumn**2)/4/1000) ## calculating oclumn volume using pir^2l the .7 is an adjustment for amount of solvent lost due to silica absorption
     return (cv)
 
-cv = round(column_volume(diameterofcolumn, lenghofcolumn), 2) ## mkaing cv the object of the function so you cna use it as a varible for anothe function 
+cv = column_volume(diameterofcolumn, lenghofcolumn) ## mkaing cv the object of the function so you cna use it as a varible for anothe function 
 
 print("Column Volume is:", cv, "mL") ## printing output of column volumn 
 
