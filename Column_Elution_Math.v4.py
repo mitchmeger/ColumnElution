@@ -4,11 +4,11 @@ Created on Wed May 24 10:16:53 2023
 
 @author: Mitch
 """
-import numpy as np 
+import numpy as np
 import math
 
 
-listofrfvalues = [0.8,0.3] 
+listofrfvalues = [0.5, 0.3, 0.27, 0.15] 
 diameterofcolumn = (53.2)
 lenghofcolumn = (250)
 
@@ -28,7 +28,7 @@ def column_volume (diameterofcolumn, lenghofcolumn) : ## function for getting vo
     r = int(rcm) ## tuning rcm into integer 
     l = int(lcm) ## turning lcm into integer 
     
-    cv = (l*pi*(diameterofcolumn**2)/4/1000) ## calculating oclumn volume using pir^2l the .7 is an adjustment for amount of solvent lost due to silica absorption
+    cv = round((l*pi*(diameterofcolumn**2)/4/1000),2) ## calculating oclumn volume using pir^2l the .7 is an adjustment for amount of solvent lost due to silica absorption
     return (cv)
 
 cv = column_volume(diameterofcolumn, lenghofcolumn) ## mkaing cv the object of the function so you cna use it as a varible for anothe function 
