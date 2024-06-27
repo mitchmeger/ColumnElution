@@ -8,9 +8,9 @@ import numpy as np
 import math
 
 
-listofrfvalues = [0.5, 0.3, 0.27, 0.15] 
+listofrfvalues = [0.9,0.75,0.3] 
 diameterofcolumn = (53.2)
-lenghofcolumn = (250)
+lenghofcolumn = (210)
 
 ## Making a function to calculate column volume for isocratic mobile phases only 
 
